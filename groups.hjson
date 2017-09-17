@@ -1,0 +1,22 @@
+{
+	Programming: {
+		"Sublime Text": Sublime Text
+		"Githubdesktop": Github Desktop
+		"Powershell": Powershell
+		"Nssm": Non-Sucking Service Manager
+	}
+	Communication: {
+		"Clwo": CLWO Slack
+		"Ts3client Win64": Teamspeak 3,
+		"Chat": Steam Chat
+		"Discord": Discord
+	}
+	Browsing: {
+		"Google Chrome": Google Chrome
+	}
+	Relaxing: {
+		// Reddit
+		// Imgur
+		"Strike: Global Offensive": "CS:GO"
+	}
+}
