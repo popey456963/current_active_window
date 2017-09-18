@@ -1,8 +1,28 @@
 const fs = require('fs')
+const os = require('os')
 const hjson = require('hjson')
+const Influx = require('influx')
 const monitor = require('active-window')
 const state_changer = require('C:\\Users\\Alexander\\Documents\\GitHub\\current_active_window\\state.js')
 const groups = hjson.parse(fs.readFileSync('C:\\Users\\Alexander\\Documents\\GitHub\\current_active_window\\groups.hjson', { encoding: 'utf8' }))
+
+const influx = new Influx.InfluxDB({
+ host: 'localhost',
+ database: 'active_windows',
+ schema: [
+   {
+     measurement: 'active_window',
+     fields: {
+       program: Influx.FieldType.STRING,
+       state: Influx.FieldType.STRING,
+       group: Influx.FieldType.STRING
+     },
+     tags: [
+       'host'
+     ]
+   }
+ ]
+})
 
 let program_groups = {}
 
@@ -43,7 +63,15 @@ function callback(window){
 		;([state, group] = state_changer[program](state, group))
 	}
 
+	influx.writePoints([
+	  {
+	    measurement: 'active_window',
+	    tags: { host: os.hostname() },
+	    fields: { program, state, group }
+	  }
+	])
+
 	console.log({ program, state, group })
 }
 
-monitor.getActiveWindow(callback, -1, 10); 
+monitor.getActiveWindow(callback, -1, 1)

@@ -4,6 +4,10 @@
 		"Githubdesktop": Github Desktop
 		"Powershell": Powershell
 		"Nssm": Non-Sucking Service Manager
+		"Influxdbstudio": Influx DB Studio
+		"Notepad": Notepad
+		"Sh": Bash Shell
+		"Cmd": Command Prompt
 	}
 	Communication: {
 		"Clwo": CLWO Slack
@@ -18,5 +22,13 @@
 		// Reddit
 		// Imgur
 		"Strike: Global Offensive": "CS:GO"
+		"Steam": Steam
+		"Starbound": Starbound
+	}
+	Windows: {
+		"Explorer": Windows Explorer
+		"Audiodg": Audio Device Graph
+		"Taskmgr": Task Manager
+		"Perfmon": Performance Monitor
 	}
 }

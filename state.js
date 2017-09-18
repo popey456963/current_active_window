@@ -18,13 +18,13 @@ module.exports = {
 		if (/(.*) \- Stack Overflow/.test(state)) {
 			return ["Stack Overflow", "Programming"]
 		}
-		if (/reddit: the front page of the internet/.test(state)) {
+		if (/reddit: the front page of the internet| : WritingPrompts/.test(state)) {
 			return ["Reddit", "Relaxing"]
 		}
 		if (/^Imgur: The most | - Album on Imgur| - Imgur/.test(state)) {
 			return ["Imgur", "Relaxing"]
 		}
-		if (/ | MDN/.test(state)) {
+		if (/ \| MDN/.test(state)) {
 			return ["Mozilla Developer Network", "Programming"]
 		}
 		if (/Classy Wolves/.test(state)) {
