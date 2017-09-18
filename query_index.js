@@ -49,14 +49,14 @@ influx.query(`SELECT * FROM "active_window"`).then(rows => {
 
   request({
     method: 'POST',
-    uri: 'http://localhost:8093/update_group_counts',
+    uri: 'https://time.sinisterheavens.com/update_group_counts',
     body: group_counts_sorted,
     json: true
   })
 
   request({
     method: 'POST',
-    uri: 'http://localhost:8093/update_program_counts',
+    uri: 'https://time.sinisterheavens.com/update_program_counts',
     body: program_counts_sorted,
     json: true
   })
