@@ -34,11 +34,13 @@ influx.query(`SELECT * FROM "active_window"`).then(rows => {
     }
   })
 
+  console.log(program_counts)
+
   let program_count = 0
   let program_counts_sorted = Object.keys(program_counts)
     .sort((a, b) => program_counts[b] - program_counts[a])
     .map(item => [item, program_counts[item]])
-    .filter(item => program_count++ < 10)
+    //.filter(item => program_count++ < 10)
 
   let group_counts_sorted = Object.keys(group_counts)
     .sort((a, b) => group_counts[b] - group_counts[a])

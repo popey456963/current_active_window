@@ -4,6 +4,13 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
+.phrase {
+  margin-top: 50px;
+  color: white;
+  text-align: center;
+  font-size: 200%;
+}
+
 .chart {
   position: absolute;
   width: 450px;

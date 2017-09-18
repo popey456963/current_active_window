@@ -27,6 +27,9 @@ module.exports = {
 		if (/ \| MDN/.test(state)) {
 			return ["Mozilla Developer Network", "Programming"]
 		}
+		if (/ - Google Search/.test(state)) {
+			return ["Google Search", "Programming"]
+		}
 		if (/Classy Wolves/.test(state)) {
 			return ["CLWO Forums", "Communication"]
 		}

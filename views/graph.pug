@@ -1,0 +1,28 @@
+html
+	head
+		link(rel="stylesheet", type="text/css", href="./design.css")
+		link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css")
+	body
+		p#phrase.phrase
+
+		div#doughnutChart.chart
+
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+		script(src='./chart.js')
+		script.
+			$(function(){
+				$.get('/#{graph}', (data) => {
+					console.log(`Relaxed for ${data.relaxing_percentage.toFixed(2)}% of the time.`)
+					if ("#{graph}" == "group") {
+						document.getElementById('phrase').innerHTML = `Relaxed for ${data.relaxing_percentage.toFixed(2)}% of the time.`
+					} else {
+						document.getElementById('phrase').innerHTML = `Mostly used ${data.data[0].title}.`
+					}
+					console.log(data)
+					$("#doughnutChart").drawDoughnutChart(data.data, { 
+						animationSteps: 180,
+						summaryTitle: "#{graph}" == "group" ? "TOTAL TIME" : "PROGRAMS USED",
+						ownValue: "#{graph}" == "group" ? data.time : data.programs
+					})
+				})
+			})
