@@ -1,5 +1,7 @@
 # Current Active Window
 
+![](https://puu.sh/xDbwu/fc29df614a.png)
+
 At the moment, this program consists of three main programs:
 
 ### Active Window Grabber
@@ -22,5 +24,3 @@ This application queries the database for every program run on that day, it send
 **Start**: node graph.js
 
 This application graphs the retrieved data in a pretty doughnut table.
-
-![](https://puu.sh/xDbwu/fc29df614a.png)
